@@ -1,0 +1,4 @@
+
+*.ico
+*.txt
+node_modules/.bin/loose-envify
