@@ -1,5 +1,6 @@
 import { PlusOutlined, SendOutlined } from "@ant-design/icons";
 import { Button } from "antd";
+import { Chat } from "./Chat";
 
 export function Dialog() {
   return (
@@ -8,20 +9,10 @@ export function Dialog() {
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        height: "100vh",
+        height: "91.7%",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          fontSize: "100px",
-          height: "100%",
-        }}
-      >
-        채팅창
-      </div>
+      <Chat></Chat>
       <div
         style={{
           display: "flex",

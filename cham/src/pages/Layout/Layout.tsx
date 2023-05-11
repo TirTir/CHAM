@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import * as S from "./Layout.styled";
+import { Dialog } from "../Chat/Dialog";
 
 export function Layout() {
   return (
@@ -94,19 +95,7 @@ export function Layout() {
             width: "100%",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "100px",
-              width: "100%",
-              height: "100%",
-              backgroundColor: "white",
-            }}
-          >
-            PAGE
-          </div>
+          <Dialog></Dialog>
         </div>
         <div
           style={{

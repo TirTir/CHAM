@@ -1,6 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Chat, Layout } from "./pages/index";
-import { Dialog } from "./pages/Chat/Dialog";
+import { Layout } from "./pages/index";
+import { Example } from "./example/Example";
+import { Login } from "./pages/Login/Login";
+import { Join } from "./pages/Join/Join";
 
 function App() {
   const router = createBrowserRouter([
@@ -9,12 +11,12 @@ function App() {
       element: <Layout />,
     },
     {
-      path: "/chat",
-      element: <Chat />,
+      path: "/login",
+      element: <Login />,
     },
     {
-      path: "/dialog",
-      element: <Dialog />,
+      path: "/join",
+      element: <Join />,
     },
   ]);
 
