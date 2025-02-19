@@ -1,112 +1,59 @@
+import { PlusOutlined, SendOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import * as S from "./Layout.styled";
-import { Dialog } from "../Chat/Dialog";
+import { Chat } from "../Chat/Chat";
 
 export function Layout() {
   return (
-    <body
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        width: "100%",
-        height: "100vh",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          width: "90px",
-          height: "100%",
-          backgroundColor: "#827979",
-        }}
-      >
-        <div
-          style={{
-            width: "50px",
-            height: "50px",
-            borderRadius: "10px",
-            backgroundColor: "white",
-            margin: "5px 0",
-          }}
-        ></div>
-        <br></br>
-        <div
-          style={{
-            width: "50px",
-            height: "50px",
-            borderRadius: "10px",
-            backgroundColor: "white",
-            margin: "5px 0",
-          }}
-        ></div>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          width: "300px",
-          height: "100%",
-          backgroundColor: "#aba2a2",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "white",
-            height: "56px",
-            width: "100%",
-            border: "solid 1px gray",
-          }}
-        >
-          멋쟁이 사자처럼
-        </div>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            width: "100%",
-            height: "65px",
-            backgroundColor: "#D9D9D9",
-          }}
-        >
-          <S.StyledButton>채팅</S.StyledButton>
-          <S.StyledButton>포스팅</S.StyledButton>
-        </div>
+    <S.LayoutContainer>
+      <S.Sidebar>
+        <S.SidebarIcon />
+        <br />
+        <S.SidebarIcon />
+      </S.Sidebar>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            height: "100%",
-            width: "100%",
-          }}
-        >
-          <Dialog></Dialog>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            width: "100%",
-            height: "30px",
-            backgroundColor: "#D9D9D9",
-          }}
-        ></div>
-      </div>
-    </body>
+      <S.ChatListContainer>
+        <S.ChatListHeader>멋쟁이 사자처럼</S.ChatListHeader>
+      </S.ChatListContainer>
+
+      <S.MainContainer>
+        <S.SearchContainer>
+          <S.SearchWrapper>
+            <S.SearchInput placeholder="검색" />
+          </S.SearchWrapper>
+        </S.SearchContainer>
+
+        <S.ContentContainer>
+          <Chat />
+        </S.ContentContainer>
+
+        <S.InputContainer>
+            <Button
+              style={{
+                backgroundColor: "white",
+                height: "2.8125rem",
+                width: "2.8125rem",
+                borderColor: "white",
+                borderRadius: "0.625rem",
+                margin: "0 5px",
+              }}
+              icon={<PlusOutlined />}
+              size={"large"}
+            />
+            <S.InputBox>
+              <S.InputField placeholder="메세지를 입력하세요" type="text" />
+              <Button
+                style={{
+                  margin: "10px",
+                  cursor: "pointer",
+                  backgroundColor: "white",
+                  border: "none",
+                }}
+                icon={<SendOutlined />}
+              />
+            </S.InputBox>
+          </S.InputContainer>
+      </S.MainContainer>
+    </S.LayoutContainer>
   );
 }
